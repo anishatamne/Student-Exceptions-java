@@ -65,3 +65,11 @@ public class StudentManager {
         }
         throw new StudentNotFoundException("Name not found.");
     }
+    public void searchByPosition() {
+        System.out.println("Enter Position (index starting from 0):");
+        int pos = sc.nextInt();
+        if (pos < 0 || pos >= students.size()) {
+            throw new StudentNotFoundException("Invalid position.");
+        }
+        students.get(pos).display();
+    }
