@@ -73,3 +73,20 @@ public class StudentManager {
         }
         students.get(pos).display();
     }
+    public void updateStudent() {
+        System.out.println("Enter PRN to update:");
+        String prn = sc.next();
+        for (Student s : students) {
+            if (s.prn.equals(prn)) {
+                System.out.println("Enter new name:");
+                s.name = sc.next();
+                System.out.println("Enter new DOB:");
+                s.dob = sc.next();
+                System.out.println("Enter new marks:");
+                s.marks = sc.nextDouble();
+                System.out.println("Updated successfully.");
+                return;
+            }
+        }
+        throw new StudentNotFoundException("PRN not found for update.");
+    }
