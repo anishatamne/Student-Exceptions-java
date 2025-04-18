@@ -54,3 +54,14 @@ public class StudentManager {
         }
         throw new StudentNotFoundException("PRN not found.");
     }
+    public void searchByName() {
+        System.out.println("Enter Name to search:");
+        String name = sc.next();
+        for (Student s : students) {
+            if (s.name.equalsIgnoreCase(name)) {
+                s.display();
+                return;
+            }
+        }
+        throw new StudentNotFoundException("Name not found.");
+    }
