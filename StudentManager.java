@@ -25,3 +25,11 @@ public class StudentManager {
         students.add(new Student(prn, name, dob, marks));
         System.out.println("Student added successfully.");
     }
+    public void displayStudents() {
+        if (students.isEmpty()) {
+            System.out.println("No students available.");
+            return;
+        }
+
+        for (Student s : students) s.display();
+    }
