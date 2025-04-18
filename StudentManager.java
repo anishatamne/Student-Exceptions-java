@@ -33,3 +33,13 @@ public class StudentManager {
 
         for (Student s : students) s.display();
     }
+    public void searchMenu() {
+        System.out.println("Search by: 1. PRN  2. Name  3. Position");
+        int opt = sc.nextInt();
+        switch (opt) {
+            case 1 -> searchByPRN();
+            case 2 -> searchByName();
+            case 3 -> searchByPosition();
+            default -> System.out.println("Invalid option.");
+        }
+    }
