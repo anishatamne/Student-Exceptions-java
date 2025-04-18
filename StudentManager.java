@@ -43,3 +43,14 @@ public class StudentManager {
             default -> System.out.println("Invalid option.");
         }
     }
+    public void searchByPRN() {
+        System.out.println("Enter PRN to search:");
+        String prn = sc.next();
+        for (Student s : students) {
+            if (s.prn.equals(prn)) {
+                s.display();
+                return;
+            }
+        }
+        throw new StudentNotFoundException("PRN not found.");
+    }
