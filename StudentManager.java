@@ -90,3 +90,18 @@ public class StudentManager {
         }
         throw new StudentNotFoundException("PRN not found for update.");
     }
+    
+    public void deleteStudent() {
+        System.out.println("Enter PRN to delete:");
+        String prn = sc.next();
+        Iterator<Student> it = students.iterator();
+        while (it.hasNext()) {
+            if (it.next().prn.equals(prn)) {
+                it.remove();
+                System.out.println("Deleted successfully.");
+                return;
+            }
+        }
+        throw new StudentNotFoundException("PRN not found for deletion.");
+    }
+}
